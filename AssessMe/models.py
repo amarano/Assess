@@ -15,10 +15,12 @@ class Assessment(BaseModelObject):
     type = models.ForeignKey(AssessmentType)
 
 class AssessmentType(BaseModelObject):
+    pass
 
 class AssessmentScore(BaseModelObject):
     assessment = models.ForeignKey(Assessment)
-    score = models.DecimalField()
+    value = models.DecimalField()
+    student = models.ForeignKey(Student)
 
 class InstructionPeriod(BaseModelObject):
     start_date = models.DateField()
@@ -41,18 +43,38 @@ class HumanBase(models.Model):
         return self.first_name + " " + self.last_name
 
 class StudentManager(models.Manager):
-
-    def most_effective_assessment_type(self):
-        all_scores = self.assessment_set.all()
-        return max(groupby(all_scores, lambda x : x.type), key=sum(operator.itemgetter(1)) / len(operator.itemgetter(1)))[0]
-
-    def least_effective_assessment_type(self):
-        all_scores = self.assessment_set.all()
-        return min(groupby(all_scores, lambda x : x.type), key=sum(operator.itemgetter(1)) / len(operator.itemgetter(1)))[0]
+    pass
 
 class Student(HumanBase):
     current_grade = models.DecimalField()
-    scores = models.ManyToManyField(AssessmentScore)
+
+    def most_effective_assessment_type(self):
+        """
+        :type : AssessmentType
+        """
+        best_average_score = max(self.get_assessment_type_score_averages(), key=operator.itemgetter(1))
+        assert isinstance(best_average_score, object)
+        return best_average_score[0]
+
+    def least_effective_assessment_type(self):
+        worst_average_score = min(self.get_assessment_type_score_averages(), key=operator.itemgetter(1))
+        assert isinstance(worst_average_score, object)
+        return worst_average_score[0]
+
+    def get_assessment_type_score_averages(self):
+        """
+        :type : Dictionary
+        """
+        retval = {}
+
+        all_scores = self.scores.all()
+        all_scores = sorted(all_scores, key=lambda x : x.assessment.type)
+
+        score_groups = groupby(all_scores, lambda x : x.assessment.type)
+        for k, v in score_groups:
+            retval[k] = sum(v) / len(v)
+
+        return retval
 
     objects = StudentManager()
 
