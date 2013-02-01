@@ -18,26 +18,33 @@ class SimpleTest(TestCase):
 
 
 class AverageScoreTest(TestCase):
-    def test_best_average_score(self):
 
+    def get_test_assessment_types(self):
         multiple_choice = AssessmentType()
         multiple_choice.name = "Multiple Choice"
         multiple_choice.description = "Multiple Choice"
-
         short_answer = AssessmentType()
         short_answer.name = "Short Answer"
         short_answer.description = "Short Answer"
-
         essay = AssessmentType()
         essay.name = "Essay"
         essay.description = "Essay"
-
         types = [multiple_choice, short_answer, essay]
+        return types
+
+    def get_test_student(self):
         student = Student()
         student.first_name = "angelo"
         student.last_name = "marano"
         student.birthdate = date.today()
         student.foreign_id = "12345678"
+        return student
+
+    def test_best_average_score(self):
+
+        types = self.get_test_assessment_types()
+
+        student = self.get_test_student()
 
         for i, t in enumerate(types): #I'm going to make the first type the best score
             for i in range(5):
