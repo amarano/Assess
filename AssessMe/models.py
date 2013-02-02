@@ -5,39 +5,19 @@ import operator
 class BaseModelObject(models.Model):
     date_created = models.DateTimeField(auto_now_add=True)
     date_updated = models.DateTimeField(auto_now=True)
-    name = models.CharField()
-    description = models.CharField()
+    name = models.CharField(max_length=50)
+    description = models.CharField(max_length=250)
 
     def __unicode__(self):
         return self.name
 
-class Assessment(BaseModelObject):
-    type = models.ForeignKey(AssessmentType)
-
-class AssessmentType(BaseModelObject):
-    pass
-
-class AssessmentScore(BaseModelObject):
-    assessment = models.ForeignKey(Assessment)
-    value = models.DecimalField()
-    student = models.ForeignKey(Student)
-
-class InstructionPeriod(BaseModelObject):
-    start_date = models.DateField()
-    end_date = models.DateField()
-    assessments = models.ManyToManyField(Assessment)
-
-class Classroom(BaseModelObject):
-    students = models.ManyToManyField(Student)
-    teachers = models.ManyToManyField(Teacher)
-
 #Peoples
 
 class HumanBase(models.Model):
-    first_name = models.CharField()
-    last_name = models.CharField()
+    first_name = models.CharField(max_length=20)
+    last_name = models.CharField(max_length=25)
     birthdate = models.DateField()
-    foreign_id = models.CharField()
+    foreign_id = models.CharField(max_length=50)
 
     def __unicode__(self):
         return self.first_name + " " + self.last_name
@@ -46,20 +26,20 @@ class StudentManager(models.Manager):
     pass
 
 class Student(HumanBase):
-    current_grade = models.DecimalField()
+    current_grade = models.DecimalField(decimal_places=2, max_digits=5, default=0.00)
 
     def most_effective_assessment_type(self):
         """
         :type : AssessmentType
         """
-        best_average_score = max(self.get_assessment_type_score_averages(), key=operator.itemgetter(1))
-        assert isinstance(best_average_score, object)
-        return best_average_score[0]
+        score_avgs = self.get_assessment_type_score_averages()
+        best_average_score = max(score_avgs.iteritems(), key=operator.itemgetter(1))[0]
+        return best_average_score
 
     def least_effective_assessment_type(self):
-        worst_average_score = min(self.get_assessment_type_score_averages(), key=operator.itemgetter(1))
-        assert isinstance(worst_average_score, object)
-        return worst_average_score[0]
+        score_avgs = self.get_assessment_type_score_averages()
+        worst_average_score = min(score_avgs.iteritems(), key=operator.itemgetter(1))[0]
+        return worst_average_score
 
     def get_assessment_type_score_averages(self):
         """
@@ -67,18 +47,41 @@ class Student(HumanBase):
         """
         retval = {}
 
-        all_scores = self.scores.all()
+        all_scores = self.assessmentscore_set.all()
         all_scores = sorted(all_scores, key=lambda x : x.assessment.type)
 
         score_groups = groupby(all_scores, lambda x : x.assessment.type)
         for k, v in score_groups:
-            retval[k] = sum(v) / len(v)
+            score_list = list(v)
+            retval[k] = sum(map(lambda x: x.value, score_list)) / len(score_list)
 
         return retval
 
     objects = StudentManager()
 
+class AssessmentType(BaseModelObject):
+    pass
+
+class Assessment(BaseModelObject):
+    type = models.ForeignKey(AssessmentType)
+
+
+class AssessmentScore(BaseModelObject):
+    assessment = models.ForeignKey(Assessment)
+    value = models.DecimalField(decimal_places=2, max_digits=5)
+    student = models.ForeignKey(Student)
+
+class InstructionPeriod(BaseModelObject):
+    start_date = models.DateField()
+    end_date = models.DateField()
+    assessments = models.ManyToManyField(Assessment)
 
 class Teacher(HumanBase):
     assessments = models.ManyToManyField(Assessment)
+
+class Classroom(BaseModelObject):
+    students = models.ManyToManyField(Student)
+    teachers = models.ManyToManyField(Teacher)
+
+
 
