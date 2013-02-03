@@ -88,3 +88,8 @@ class AverageScoreTest(TestCase):
         self.assertNotEqual(types[0], most_eff_a_t)
 
         self.clean_test(a, student, types)
+
+    def test_most_effective_instruction_type(self):
+        lecture = InstructionType.objects.create_with_automatic_percentage()
+        lecture.name = "lecture"
+        lecture.description = "lecture"
