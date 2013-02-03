@@ -18,7 +18,7 @@ class SimpleTest(TestCase):
 
 
 class AverageScoreTest(TestCase):
-    
+
     def get_test_assessment_types(self):
         multiple_choice = AssessmentType()
         multiple_choice.name = "Multiple Choice"
