@@ -47,7 +47,7 @@ class Student(HumanBase):
 
     def most_effective_instruction_type(self):
 
-        all_instruction_periods = InstructionPeriod.objects.filter(assessments__assessmentscores__student = self)
+        all_instruction_periods = InstructionPeriod.objects.filter(assessments__assessmentscore__student = self)
         return all_instruction_periods
 
 
@@ -82,13 +82,6 @@ class AssessmentScore(BaseModelObject):
     value = models.DecimalField(decimal_places=2, max_digits=5)
     student = models.ForeignKey(Student)
 
-class InstructionPeriod(BaseModelObject):
-
-    start_date = models.DateField()
-    end_date = models.DateField()
-    assessments = models.ManyToManyField(Assessment)
-    instruction_types = models.ManyToManyField(InstructionType)
-
 class Teacher(HumanBase):
 
     assessments = models.ManyToManyField(Assessment)
@@ -111,6 +104,13 @@ class InstructionType(BaseModelObject):
     percentage = models.PositiveIntegerField()
 
     objects = InstructionTypeManager()
+
+class InstructionPeriod(BaseModelObject):
+
+    start_date = models.DateField()
+    end_date = models.DateField()
+    assessments = models.ManyToManyField(Assessment)
+    instruction_types = models.ManyToManyField(InstructionType)
 
 
 

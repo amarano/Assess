@@ -7,7 +7,7 @@ Replace this with more appropriate tests for your application.
 
 from django.test import TestCase
 from AssessMe.models import *
-from datetime import date
+from datetime import date, timedelta
 
 class SimpleTest(TestCase):
     def test_basic_addition(self):
@@ -93,3 +93,48 @@ class AverageScoreTest(TestCase):
         lecture = InstructionType.objects.create_with_automatic_percentage()
         lecture.name = "lecture"
         lecture.description = "lecture"
+
+        period = InstructionPeriod()
+
+        period.start_date = date.today() - timedelta(days = 7)
+        period.end_date = date.today() + timedelta(days = 7)
+        period.save()
+        lecture.save()
+
+        period.instruction_types.add(lecture)
+
+        test = Assessment()
+        test.type = self.get_test_assessment_types()[0]
+        score = AssessmentScore()
+        s = self.get_test_student()
+        score.student = s
+
+        score.value = 100
+        score.assessment = test
+
+        self.assertTrue(lecture.percentage == 100)
+
+        lecture.percentage = 50
+        lecture.save()
+        test.save()
+        period.instruction_types.add(lecture)
+        period.assessments.add(test)
+        period.save()
+
+        group_work = InstructionType.objects.create_with_automatic_percentage()
+        group_work.name = 'groupwork'
+        group_work.description = 'groupwork'
+
+        group_work.save()
+
+        period.instruction_types.add(group_work)
+        period.save()
+
+        self.assertTrue(group_work.percentage == 50)
+
+        s.most_effective_instruction_type()
+
+
+
+
+
