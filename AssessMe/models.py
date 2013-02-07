@@ -47,7 +47,8 @@ class Student(HumanBase):
 
     def most_effective_instruction_type(self):
 
-        all_instruction_periods = InstructionPeriod.objects.filter(assessments__assessmentscore__student = self)
+        all_instruction_periods = InstructionPeriod.objects.filter(assessments__assessmentscore__student__id = self.id)
+
         return all_instruction_periods
 
 

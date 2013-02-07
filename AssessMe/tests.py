@@ -77,6 +77,7 @@ class AverageScoreTest(TestCase):
         self.clean_test(a, student, types)
 
     def test_worst_average_score(self):
+
         types = self.get_test_assessment_types()
 
         student = self.get_test_student()
@@ -90,6 +91,9 @@ class AverageScoreTest(TestCase):
         self.clean_test(a, student, types)
 
     def test_most_effective_instruction_type(self):
+
+        s = self.get_test_student()
+
         lecture = InstructionType.objects.create_with_automatic_percentage()
         lecture.name = "lecture"
         lecture.description = "lecture"
@@ -105,21 +109,21 @@ class AverageScoreTest(TestCase):
 
         test = Assessment()
         test.type = self.get_test_assessment_types()[0]
-        score = AssessmentScore()
-        s = self.get_test_student()
-        score.student = s
+        test.save()
 
+        score = AssessmentScore()
+        score.student = s
         score.value = 100
         score.assessment = test
+        score.save()
 
         self.assertTrue(lecture.percentage == 100)
 
         lecture.percentage = 50
         lecture.save()
-        test.save()
+
         period.instruction_types.add(lecture)
         period.assessments.add(test)
-        period.save()
 
         group_work = InstructionType.objects.create_with_automatic_percentage()
         group_work.name = 'groupwork'
