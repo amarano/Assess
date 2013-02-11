@@ -14,6 +14,26 @@ class BaseModelObject(models.Model):
 
 #Peoples
 
+class InstructionTypeManager(models.Manager):
+
+    def create_with_automatic_percentage(self):
+        percentages = [x.percentage for x in self.all()]
+        remaining_percent = 100 - sum(percentages)
+
+        im = InstructionType(percentage=remaining_percent)
+        return im
+
+class InstructionType(BaseModelObject):
+    percentage = models.PositiveIntegerField()
+
+    objects = InstructionTypeManager()
+
+class InstructionPeriod(BaseModelObject):
+
+    start_date = models.DateField()
+    end_date = models.DateField()
+    instruction_type = models.ForeignKey(InstructionType)
+
 class HumanBase(models.Model):
 
     first_name = models.CharField(max_length=20)
@@ -45,13 +65,6 @@ class Student(HumanBase):
         worst_average_score = min(score_avgs.iteritems(), key=operator.itemgetter(1))[0]
         return worst_average_score
 
-    def most_effective_instruction_type(self):
-
-        all_instruction_periods = InstructionPeriod.objects.filter(assessments__assessmentscore__student__id = self.id)
-
-        return all_instruction_periods
-
-
     def get_assessment_type_score_averages(self):
         """
         :type : Dictionary
@@ -68,6 +81,15 @@ class Student(HumanBase):
 
         return retval
 
+    def get_instruction_period_score_averages(self):
+        retval = {}
+
+        for k, g in groupby(InstructionPeriod.objects.all(), lambda x: x.instruction_type):
+            retval[k] = sum([assessment_score for assessment_score in it.assessment.assessmentscore_set for it in g])
+
+        return retval
+
+
     objects = StudentManager()
 
 class AssessmentType(BaseModelObject):
@@ -76,6 +98,7 @@ class AssessmentType(BaseModelObject):
 class Assessment(BaseModelObject):
 
     type = models.ForeignKey(AssessmentType)
+    instruction_period = models.ForeignKey(InstructionPeriod)
 
 class AssessmentScore(BaseModelObject):
 
@@ -92,26 +115,7 @@ class Classroom(BaseModelObject):
     students = models.ManyToManyField(Student)
     teachers = models.ManyToManyField(Teacher)
 
-class InstructionTypeManager(models.Manager):
 
-    def create_with_automatic_percentage(self):
-        percentages = [x.percentage for x in self.all()]
-        remaining_percent = 100 - sum(percentages)
-
-        im = InstructionType(percentage=remaining_percent)
-        return im
-
-class InstructionType(BaseModelObject):
-    percentage = models.PositiveIntegerField()
-
-    objects = InstructionTypeManager()
-
-class InstructionPeriod(BaseModelObject):
-
-    start_date = models.DateField()
-    end_date = models.DateField()
-    assessments = models.ManyToManyField(Assessment)
-    instruction_types = models.ManyToManyField(InstructionType)
 
 
 

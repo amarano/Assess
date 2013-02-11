@@ -122,21 +122,18 @@ class AverageScoreTest(TestCase):
         lecture.percentage = 50
         lecture.save()
 
-        period.instruction_types.add(lecture)
-        period.assessments.add(test)
-
         group_work = InstructionType.objects.create_with_automatic_percentage()
         group_work.name = 'groupwork'
         group_work.description = 'groupwork'
 
         group_work.save()
 
-        period.instruction_types.add(group_work)
+        period.instruction_type = lecture
         period.save()
 
         self.assertTrue(group_work.percentage == 50)
 
-        s.most_effective_instruction_type()
+        s.get_instruction_period_score_averages()
 
 
 
