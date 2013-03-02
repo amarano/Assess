@@ -2,21 +2,31 @@
 <project version="4">
   <component name="ChangeListManager">
     <list id="13d6ed57-54ab-42c4-83d8-efc413eca06e" name="Default" comment="" />
-    <list default="true" id="fe70b621-545d-428e-92f4-f294d775c775" name="New changelist" comment="More test work">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/AssessMe/templates/about.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/AssessMe/templates/base.html" />
+    <list default="true" id="fe70b621-545d-428e-92f4-f294d775c775" name="New changelist" comment="Starting work on views&#10;">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/AssessMe/forms.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/AssessMe/templates/registration/login.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/AssessMe/templates/registration/newuser.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/AssessMe/templates/about.html" afterPath="$PROJECT_DIR$/AssessMe/templates/about.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/AssessMe/templates/base.html" afterPath="$PROJECT_DIR$/AssessMe/templates/base.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/AssessMe/views.py" afterPath="$PROJECT_DIR$/AssessMe/views.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="Assess.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/Dummy.txt" changelist="fe70b621-545d-428e-92f4-f294d775c775" time="1362093131537" ignored="false" />
+    <file path="/Dummy.txt" changelist="fe70b621-545d-428e-92f4-f294d775c775" time="1362163453076" ignored="false" />
     <file path="/models.py" changelist="fe70b621-545d-428e-92f4-f294d775c775" time="1360543746165" ignored="false" />
     <file path="/tests.py" changelist="fe70b621-545d-428e-92f4-f294d775c775" time="1360543716360" ignored="false" />
-    <file path="/base.html" changelist="fe70b621-545d-428e-92f4-f294d775c775" time="1362162097642" ignored="false" />
-    <file path="/about.html" changelist="fe70b621-545d-428e-92f4-f294d775c775" time="1362162377668" ignored="false" />
-    <file path="/urls.py" changelist="fe70b621-545d-428e-92f4-f294d775c775" time="1362162545969" ignored="false" />
+    <file path="/base.html" changelist="fe70b621-545d-428e-92f4-f294d775c775" time="1362184078926" ignored="false" />
+    <file path="/about.html" changelist="fe70b621-545d-428e-92f4-f294d775c775" time="1362184933207" ignored="false" />
+    <file path="/urls.py" changelist="fe70b621-545d-428e-92f4-f294d775c775" time="1362184698339" ignored="false" />
     <file path="/Django Console" changelist="fe70b621-545d-428e-92f4-f294d775c775" time="1362163259951" ignored="false" />
     <file path="/settings.py" changelist="fe70b621-545d-428e-92f4-f294d775c775" time="1362163308290" ignored="false" />
+    <file path="/assessme.css" changelist="fe70b621-545d-428e-92f4-f294d775c775" time="1362171958611" ignored="false" />
+    <file path="/registration.html" changelist="fe70b621-545d-428e-92f4-f294d775c775" time="1362173328256" ignored="false" />
+    <file path="/login.html" changelist="fe70b621-545d-428e-92f4-f294d775c775" time="1362173822011" ignored="false" />
+    <file path="/views.py" changelist="fe70b621-545d-428e-92f4-f294d775c775" time="1362184957651" ignored="false" />
+    <file path="/forms.py" changelist="fe70b621-545d-428e-92f4-f294d775c775" time="1362184434763" ignored="false" />
+    <file path="/newuser.html" changelist="fe70b621-545d-428e-92f4-f294d775c775" time="1362184829689" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,37 +43,10 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="settings.py" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/Assess/settings.py">
+      <file leaf-file-name="login.html" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/AssessMe/templates/registration/login.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="73" column="4" selection-start="2680" selection-end="2680" vertical-scroll-proportion="1.5446224">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="tests.py" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/AssessMe/tests.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="42" column="22" selection-start="1284" selection-end="1284" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="models.py" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/AssessMe/models.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="62" column="0" selection-start="1760" selection-end="1760" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="views.py" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/AssessMe/views.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="1" column="0" selection-start="26" selection-end="26" vertical-scroll-proportion="0.0">
+            <state line="0" column="0" selection-start="0" selection-end="211" vertical-scroll-proportion="-0.0">
               <folding />
             </state>
           </provider>
@@ -72,7 +55,36 @@
       <file leaf-file-name="base.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/AssessMe/templates/base.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="29" column="39" selection-start="1285" selection-end="1285" vertical-scroll-proportion="-9.25">
+            <state line="45" column="20" selection-start="2207" selection-end="2207" vertical-scroll-proportion="-12.25">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="newuser.html" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/AssessMe/templates/registration/newuser.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="5" column="75" selection-start="178" selection-end="178" vertical-scroll-proportion="-3.125">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="views.py" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/AssessMe/views.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="3" column="0" selection-start="123" selection-end="123" vertical-scroll-proportion="0.0">
+              <folding>
+                <element signature="e#26#80#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="forms.py" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/AssessMe/forms.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -81,27 +93,7 @@
       <file leaf-file-name="about.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/AssessMe/templates/about.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="4" column="71" selection-start="320" selection-end="320" vertical-scroll-proportion="-2.5">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="urls.py" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Assess/urls.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="10" column="34" selection-start="349" selection-end="349" vertical-scroll-proportion="0.0">
-              <folding>
-                <element signature="e#0#51#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="bootstrap.css" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/AssessMe/static/css/bootstrap.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="230" column="2" selection-start="3343" selection-end="3343" vertical-scroll-proportion="-10.307693">
+            <state line="6" column="64" selection-start="409" selection-end="409" vertical-scroll-proportion="-3.75">
               <folding />
             </state>
           </provider>
@@ -130,14 +122,22 @@
         <option value="$PROJECT_DIR$/static/css/bootstrap.css" />
         <option value="$PROJECT_DIR$/templates/base.html" />
         <option value="$PROJECT_DIR$/templates/about.html" />
-        <option value="$PROJECT_DIR$/Assess/urls.py" />
         <option value="$PROJECT_DIR$/Assess/settings.py" />
+        <option value="$PROJECT_DIR$/AssessMe/templates/registration.html" />
+        <option value="$PROJECT_DIR$/Assess/static/css/assessme.css" />
+        <option value="$PROJECT_DIR$/AssessMe/templates/registration/login.html" />
+        <option value="$PROJECT_DIR$/AssessMe/templates/base.html" />
+        <option value="$PROJECT_DIR$/AssessMe/forms.py" />
+        <option value="$PROJECT_DIR$/Assess/urls.py" />
+        <option value="$PROJECT_DIR$/AssessMe/templates/registration/newuser.html" />
+        <option value="$PROJECT_DIR$/AssessMe/templates/about.html" />
+        <option value="$PROJECT_DIR$/AssessMe/views.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="7" />
-    <option name="y" value="25" />
+    <option name="x" value="98" />
+    <option name="y" value="48" />
     <option name="width" value="1440" />
     <option name="height" value="812" />
   </component>
@@ -225,9 +225,15 @@
     </option>
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/AssessMe/templates/registration" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/AssessMe/templates/registration" />
+      <recent name="$PROJECT_DIR$/AssessMe/templates" />
+      <recent name="$PROJECT_DIR$/AssessMe/templates/login.html" />
+      <recent name="$PROJECT_DIR$/Assess" />
       <recent name="$PROJECT_DIR$/AssessMe" />
-      <recent name="$PROJECT_DIR$/static" />
     </key>
   </component>
   <component name="RunManager" selected="Django tests.Test: AssessMe.AverageScoreTest.test_most_effective_instruction_type">
@@ -389,6 +395,13 @@
       <option name="USE_PATTERN" value="false" />
       <method />
     </configuration>
+    <configuration default="true" type="JavascriptDebugSession" factoryName="Local" singleton="true">
+      <JSDebuggerConfigurationSettings>
+        <option name="engineId" />
+        <option name="fileUrl" />
+      </JSDebuggerConfigurationSettings>
+      <method />
+    </configuration>
     <configuration default="false" name="Assess" type="Python.DjangoServer" factoryName="Django server">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -470,28 +483,32 @@
       <created>1360543832610</created>
       <updated>1360543832610</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Starting work on views&#10;">
+      <created>1362163456897</created>
+      <updated>1362163456897</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="7" y="25" width="1440" height="812" extended-state="6" />
+    <frame x="98" y="48" width="1440" height="812" extended-state="6" />
     <editor active="false" />
     <layout>
-      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32564843" sideWeight="0.47991392" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Changes" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3251445" sideWeight="0.47991392" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2159254" sideWeight="0.6719653" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2159254" sideWeight="0.6748555" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39855072" sideWeight="0.91822094" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32803467" sideWeight="0.4978479" order="8" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3251445" sideWeight="0.51506454" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32658958" sideWeight="0.6477762" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32803467" sideWeight="0.49713057" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32803467" sideWeight="0.49713057" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -535,7 +552,7 @@
     <option name="MAXIMUM_HISTORY_ROWS" value="1000" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="More test work" />
+    <option name="LAST_COMMIT_MESSAGE" value="Starting work on views&#10;" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="true" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -551,6 +568,7 @@
     <MESSAGE value="Updated best and worst assessment type tests&#10;" />
     <MESSAGE value="Started instuction type scoring&#10;" />
     <MESSAGE value="More test work" />
+    <MESSAGE value="Starting work on views&#10;" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -575,28 +593,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/AssessMe/tests.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="21" column="4" selection-start="479" selection-end="479" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/manage.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$APPLICATION_HOME_DIR$/helpers/pycharm/tcunittest.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="185" column="0" selection-start="5972" selection-end="5972" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file:///Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/django/test/simple.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="384" column="0" selection-start="14553" selection-end="14553" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
     <entry file="file://$APPLICATION_HOME_DIR$/helpers/pycharm/django_test_runner.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="124" column="0" selection-start="4383" selection-end="4383" vertical-scroll-proportion="0.0" />
@@ -617,60 +613,90 @@
         <state line="69" column="0" selection-start="1868" selection-end="1868" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/AssessMe/tests.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="42" column="22" selection-start="1284" selection-end="1284" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/AssessMe/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="62" column="0" selection-start="1760" selection-end="1760" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/AssessMe/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="1" column="0" selection-start="26" selection-end="26" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/AssessMe/static/css/bootstrap.css">
+    <entry file="file://$PROJECT_DIR$/Assess/static/css/bootstrap.css">
       <provider selected="true" editor-type-id="text-editor">
         <state line="230" column="2" selection-start="3343" selection-end="3343" vertical-scroll-proportion="-10.307693">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/AssessMe/templates/base.html">
+    <entry file="file://$PROJECT_DIR$/Assess/static/css/assessme.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="29" column="39" selection-start="1285" selection-end="1285" vertical-scroll-proportion="-9.25">
+        <state line="28" column="1" selection-start="663" selection-end="663" vertical-scroll-proportion="0.92771083">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/AssessMe/templates/about.html">
+    <entry file="file://$PROJECT_DIR$/AssessMe/models.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="71" selection-start="320" selection-end="320" vertical-scroll-proportion="-2.5">
+        <state line="62" column="0" selection-start="1760" selection-end="1760" vertical-scroll-proportion="-0.9931507">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/AssessMe/tests.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="42" column="22" selection-start="1284" selection-end="1284" vertical-scroll-proportion="0.034246575">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Assess/urls.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="34" selection-start="349" selection-end="349" vertical-scroll-proportion="0.0">
+        <state line="14" column="34" selection-start="528" selection-end="528" vertical-scroll-proportion="0.47945204">
           <folding>
             <element signature="e#0#51#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/AssessMe/templates/base.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="45" column="20" selection-start="2207" selection-end="2207" vertical-scroll-proportion="-12.25">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Assess/settings.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="73" column="4" selection-start="2680" selection-end="2680" vertical-scroll-proportion="1.5446224">
+        <state line="64" column="30" selection-start="2354" selection-end="2354" vertical-scroll-proportion="-0.10273973">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/AssessMe/templates/registration/login.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="211" vertical-scroll-proportion="-0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/AssessMe/templates/registration/newuser.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="5" column="75" selection-start="178" selection-end="178" vertical-scroll-proportion="-3.125">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/AssessMe/templates/about.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="6" column="64" selection-start="409" selection-end="409" vertical-scroll-proportion="-3.75">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/AssessMe/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="3" column="0" selection-start="123" selection-end="123" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="e#26#80#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/AssessMe/forms.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>

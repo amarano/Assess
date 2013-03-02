@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Styles -->
     <link href="{{ STATIC_URL }}css/bootstrap.min.css" rel="stylesheet" media="screen">
+    <link href="{{ STATIC_URL }}css/assessme.css" rel="stylesheet" media="screen">
     <!-- Scripts -->
     <script src="http://code.jquery.com/jquery.js"></script>
     <script src="{{ STATIC_URL }}js/bootstrap.min.js"></script>
@@ -22,22 +23,27 @@
                 <a class="brand" href="#">Assess Me</a>
                 <div class="nav-collapse collapse">
                     <ul class="nav">
-                        <li><a href="#">Home</a></li>
-                        <li><a href="#">About</a></li>
-                        <li><a href="#">Contact</a></li>
+                        <li><a href="About">About</a></li>
+                        <li><a href="Contact">Contact</a></li>
                     {% if user.is_authenticated %}
-                        <li><a href="#">Classrooms</a></li>
-                        <li><a href="#">Teachers</a></li>
+                        <li><a href="/Classrooms">Classrooms</a></li>
+                        <li><a href="/Teachers">Teachers</a></li>
                     {% endif %}
                     </ul>
                 {% if not user.is_authenticated %}
-                <form class="navbar-form pull-right">
+                <form class="navbar-form pull-right" action="{% url django.contrib.auth.views.login %}">
+                    {% csrf_token %}
                     <input class="span2" type="text" placeholder="Email">
                     <input class="span2" type="password" placeholder="Password">
                     <button type="submit" class="btn">Sign in</button>
                 </form>
+                {% if form.errors %}
+                    <p>Your username and password didn't match. Please try again.</p>
+                {% endif %}
                 {% else %}
-                    <span>{{ user.name }}</span>
+                    <span class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">{{ user.name }}</a>
+                    </span>
                 {% endif %}
                 </div><!--/.nav-collapse -->
             </div>
