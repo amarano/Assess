@@ -2,20 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list id="13d6ed57-54ab-42c4-83d8-efc413eca06e" name="Default" comment="" />
-    <list default="true" id="fe70b621-545d-428e-92f4-f294d775c775" name="New changelist" comment="Starting work on views&#10;">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/AssessMe/admin.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/AssessMe/templates/classrooms/list.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/AssessMe/templates/base.html" afterPath="$PROJECT_DIR$/AssessMe/templates/base.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/AssessMe/forms.py" afterPath="$PROJECT_DIR$/AssessMe/forms.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/AssessMe/templates/registration/login.html" afterPath="$PROJECT_DIR$/AssessMe/templates/registration/login.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/AssessMe/models.py" afterPath="$PROJECT_DIR$/AssessMe/models.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/AssessMe/templates/registration/newuser.html" afterPath="$PROJECT_DIR$/AssessMe/templates/registration/newuser.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/AssessMe/views.py" afterPath="$PROJECT_DIR$/AssessMe/views.py" />
+    <list default="true" id="fe70b621-545d-428e-92f4-f294d775c775" name="New changelist" comment="Student, Classroom views and admin site">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="Assess.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/Dummy.txt" changelist="fe70b621-545d-428e-92f4-f294d775c775" time="1362185090301" ignored="false" />
+    <file path="/Dummy.txt" changelist="fe70b621-545d-428e-92f4-f294d775c775" time="1362321874730" ignored="false" />
     <file path="/models.py" changelist="fe70b621-545d-428e-92f4-f294d775c775" time="1362321781040" ignored="false" />
     <file path="/tests.py" changelist="fe70b621-545d-428e-92f4-f294d775c775" time="1360543716360" ignored="false" />
     <file path="/base.html" changelist="fe70b621-545d-428e-92f4-f294d775c775" time="1362275618554" ignored="false" />
@@ -534,7 +526,11 @@
       <created>1362185100642</created>
       <updated>1362185100642</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Student, Classroom views and admin site">
+      <created>1362321876011</created>
+      <updated>1362321876011</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -599,7 +595,7 @@
     <option name="MAXIMUM_HISTORY_ROWS" value="1000" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="Starting work on views&#10;" />
+    <option name="LAST_COMMIT_MESSAGE" value="Student, Classroom views and admin site" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="true" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -616,6 +612,7 @@
     <MESSAGE value="Started instuction type scoring&#10;" />
     <MESSAGE value="More test work" />
     <MESSAGE value="Starting work on views&#10;" />
+    <MESSAGE value="Student, Classroom views and admin site" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
