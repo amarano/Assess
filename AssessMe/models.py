@@ -1,3 +1,4 @@
+from django.contrib.auth.models import User
 from django.db import models
 from itertools import groupby
 import operator
@@ -109,6 +110,7 @@ class AssessmentScore(BaseModelObject):
 class Teacher(HumanBase):
 
     assessments = models.ManyToManyField(Assessment)
+    user = models.ForeignKey(User)
 
 class Classroom(BaseModelObject):
 

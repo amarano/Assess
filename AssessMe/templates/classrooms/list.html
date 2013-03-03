@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% block content %}
+    <table>
+    {% for classroom in object_list %}
+        <tr>
+            <td>{{ classroom.name }}</td>
+            <td><a href='/Students/{{ classroom.id }}'>Student List</a></td>
+        </tr>
+    {% endfor %}
+    </table>
+{% endblock %}
