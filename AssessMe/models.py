@@ -109,7 +109,7 @@ class AssessmentScore(BaseModelObject):
 
 class Teacher(HumanBase):
 
-    assessments = models.ManyToManyField(Assessment)
+    assessments = models.ManyToManyField(Assessment, blank=True, null=True)
     user = models.ForeignKey(User)
 
 class Classroom(BaseModelObject):

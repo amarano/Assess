@@ -25,12 +25,16 @@ class CreateUserView(FormView):
 
 class ClassroomListView(ListView):
     model = Classroom
+    context_object_name = "classrooms"
     template_name = "classrooms/list.html"
 
 class StudentListView(ListView):
-    model = Student
 
-    def get(self, request, *args, **kwargs):
-        queryset = Student.objects.filter(classroom__id = kwargs['classroom_id'])
+    template_name = "students/list.html"
+    context_object_name = "students"
+
+    def get_queryset(self):
+        return Student.objects.filter(classroom__id = self.kwargs['classroom_id'])
+
 
 
